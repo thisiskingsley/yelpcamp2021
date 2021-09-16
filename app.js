@@ -67,7 +67,7 @@ const sessionConfig = {
 	saveUninitialized: true,
 	cookie: {
 		httpOnly: true, //this cookie cannot be accessed through client-side scripting. Just extra security.
-		// secure: true, //this cookie can only be configured over HTTPS(secure) vs HTTP.
+		secure: true, //this cookie can only be configured over HTTPS(secure) vs HTTP.
 		expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // this cookie expires in a week. Date.now() is in milliseconds.
 		maxAge: 1000 * 60 * 60 * 24 * 7, //this cookie can only be a week old
 	},
@@ -91,7 +91,11 @@ const styleSrcUrls = [
 	'https://fonts.googleapis.com',
 	'https://use.fontawesome.com',
 ];
-const connectSrcUrls = ['https://api.mapbox.com', 'https://*.tiles.mapbox.com', 'https://events.mapbox.com'];
+const connectSrcUrls = [
+	'https://api.mapbox.com',
+	'https://*.tiles.mapbox.com',
+	'https://events.mapbox.com',
+];
 const fontSrcUrls = [];
 app.use(
 	helmet.contentSecurityPolicy({
